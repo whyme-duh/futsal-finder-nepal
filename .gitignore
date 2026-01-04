@@ -1,0 +1,44 @@
+.venv/
+env/
+venv/
+
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Migrations (include empty __init__.py files, but ignore the specific migration files themselves if desired, though generally you want to track migration files in version control for team collaboration)
+# migrations/*.py
+# !migrations/__init__.py
+
+# Static and media files (if uploaded/compiled locally and not needed in repo)
+# If you compile static assets locally, you may ignore the output directory, e.g., 'staticfiles/' or 'build/'.
+staticfiles/
+mediafiles/
+
+# Local settings
+.env
+*.log
+local_settings.py
+
+# React/JavaScript
+# Dependencies
+node_modules/
+
+# Build artifacts
+build/
+dist/
+out/
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# npm/yarn lock files (optional, generally recommended to include in version control)
+# package-lock.json
+# yarn.lock
+
+# Editor/OS Files
+.DS_Store
+.vscode/
