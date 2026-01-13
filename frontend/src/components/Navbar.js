@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function Navbar(){
     return (
         <AppBar position='fixed'>
-            <Toolbar sx={{backgroundColor:'white', justifyContent:'space-between'}}>
+            <Toolbar sx={{backgroundColor:'white', justifyContent:'space-around'}}>
                 <Typography variant='h5' sx= {{color:'black', fontFamily:'monospace'}}>
                     Futsal Finder
                 </Typography>
