@@ -26,7 +26,7 @@ function Futsal(){
        <Typography variant='p'>Below are the list of futsals you can find in Kathmandu: </Typography>
         {futsals.map(futsal =>(
             <Card sx={{width:'30%', marginTop:'2em'}}>
-                <img src={futsalimg} alt="fustal-img" className='futsal-img-card' />
+                <img src={futsalimg} alt="fustal-img" className='futsal-img-card'/>
                 <Typography variant='h5'>
                     {futsal.name}
                 </Typography>

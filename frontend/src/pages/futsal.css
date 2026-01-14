@@ -3,3 +3,83 @@
     object-fit: cover;
     padding: 1em;
 }
+
+.front-image-futsal{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+body{
+    background-color: rgb(243, 239, 243);
+}
+.img-overlay{
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.img-overlay-content{
+    margin-top: 3em;
+}
+.image-overlay-header{
+    font-size:4em;
+    margin-bottom: 0.25em;
+    color: white;
+}
+.image-overlay-sub-header{
+    margin-top: 0;
+    font-size: 1.5em;
+    color: white;
+}
+.find-futsal-btn{
+    background-color: rgb(31, 136, 12);
+    border-radius: 15px;
+    padding-inline: 2em;
+    padding-block: 0.85em;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25em;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+.services-provided{
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-around;
+}
+.service h5{
+    font-size: 1.25em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.top-rated-futsals{
+    padding-bottom: 2em;
+    width: 100%;
+}
+.top-rated-header{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+}
+.futsal-card{
+    width: 30%;
+    border-radius: 10px;
+
+    background-color: white;
+}
+.futsal-image{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+.futsal-info{
+    padding: 0.5em;
+    padding-top: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+}
