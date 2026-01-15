@@ -3,16 +3,42 @@ import {Link} from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './navbar.css'
 
+function CustomerStyledButton(props){
+    return (
+        <Button 
+        disableRipple
+        sx={{
+            fontSize:'1.5em',
+            color:'black',
+            fontFamily:'monospace',
+            paddingInline:'1em',
+            ":hover":{
+                borderBottom:'1px solid black'
+            }
+        }}
+        component={Link}
+        to={props.link}
+        >
+            {props.text}
+        </Button>
+    )
+}
+
 function Navbar(){
     return (
         <AppBar position='fixed' sx={{ boxShadow: 'none' }}>
             <Toolbar sx={{backgroundColor:'white', justifyContent:'space-around'}}>
+                <Button component={Link} to ='/' disableRipple sx={{":hover":{
+                    backgroundColor:'transparent'
+                }}}>
                 <img src={logo} alt="logo" width={'200px'}/>
+
+                </Button>
                 <Box sx={{display:{xs : 'block' , md: 'flex' }}}>
-                    <Button component={Link} to="/" className='nav-buttons' >Home</Button>
-                    <Button component={Link} to="/futsals" className='nav-buttons'>Futsals</Button>
-                    <Button className='nav-buttons'>Find Player</Button>
-                    <Button className='nav-buttons'>About</Button>
+                    <CustomerStyledButton text="Futsals" link ="/futsals"/>
+                    <CustomerStyledButton text="About" link ="/aboutus"/>
+                    <CustomerStyledButton text="Find Player" link ="/findplayer"/>
+
                 </Box>
             </Toolbar>
 

@@ -22,22 +22,21 @@ function Futsal(){
     }, [])
     return (
        <>
-        <Container sx={{marginTop:'6em'}}>
-       <Typography variant='p'>Below are the list of futsals you can find in Kathmandu: </Typography>
-        {futsals.map(futsal =>(
-            <Card sx={{width:'30%', marginTop:'2em'}}>
-                <img src={futsalimg} alt="fustal-img" className='futsal-img-card'/>
-                <Typography variant='h5'>
-                    {futsal.name}
-                </Typography>
-                <Typography align='left' paddingInline={'1em'} paddingTop={'1em'}>
-                    Location: {futsal.location}
-                </Typography>
-                <Typography align='left' paddingInline={'1em'} paddingTop={'1em'}>
-                    Number of futsal grounds: {futsal.no_of_grounds} grounds
-                </Typography>
-            </Card>
-        ))}
+        <Container sx ={{marginTop:'8em'}}>
+            <div className="top-rated-futsals">
+                <p>Below are the list of futsals in Kathmandu City</p>
+                {futsals.map(futsal => (
+                <div className="futsal-card">
+                    <img src={futsalimg} alt="fustal-img" className='futsal-image' />
+                    <h2>{futsal.name}</h2>
+                    <div className="futsal-info">
+                        <h5> <strong>Location</strong>: {futsal.location}</h5>
+                        <h5> <strong>Number</strong>: 01-4324322</h5>
+                        <h5> <strong>Number of Grounds</strong>: {futsal.no_of_grounds} grounds</h5>
+                    </div>
+                </div>
+                ))}
+            </div>
         </Container>
        </>
     )

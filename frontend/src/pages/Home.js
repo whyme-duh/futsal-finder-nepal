@@ -65,7 +65,7 @@ function Home(){
                     <div className="futsal-info">
                        <h5> <strong>Location</strong>: {futsal.location}</h5>
                        <h5> <strong>Number</strong>: 01-4324322</h5>
-                       <h5> <strong>Number of Grounds</strong>: {futsal.no_of_grounds}</h5>
+                       <h5> <strong>Number of Grounds</strong>: {futsal.no_of_grounds} grounds</h5>
                     </div>
                 </div>
                 ))}
