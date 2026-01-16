@@ -1,0 +1,27 @@
+Dependencies
+
+node_modules
+venv
+.env
+
+Python compilation
+
+pycache
+*.pyc
+*.pyo
+*.pyd
+
+Git
+
+.git
+.gitignore
+
+Docker
+
+docker-compose.yml
+Dockerfile
+
+Media/Static output
+
+staticfiles
+mediafiles

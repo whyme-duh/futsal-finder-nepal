@@ -3,9 +3,7 @@ import {Container, Typography} from '@mui/material';
 function AboutUs(){
     return (
         <>
-        <Container sx={{
-            marginTop:'8em'
-        }}>
+        <Container >
             <Typography varient = "h3">About Us Page</Typography>
         </Container>
         </>

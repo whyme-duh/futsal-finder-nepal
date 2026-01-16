@@ -1,0 +1,36 @@
+.img-futsal-detail-page{
+    width: 100%;
+    height:70vh;
+    object-fit: cover;
+}
+.fustal-detail-booking{
+    display: flex;
+    justify-content: space-between;
+}
+
+.futsal-content{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+}
+.location{
+    margin-top: 1em;
+    display: flex;
+}
+.facilities-icons{
+    margin-top: 2em;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.facility{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.facility-icon-img{
+    width: 50px;
+}

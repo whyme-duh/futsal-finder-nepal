@@ -5,6 +5,7 @@ import CalendarMonthTwoToneIcon from '@mui/icons-material/CalendarMonthTwoTone';
 import ShieldTwoToneIcon from '@mui/icons-material/ShieldTwoTone';
 import axios from 'axios';
 import image from '../assets/images.jpg';
+import { Link } from 'react-router-dom';
 import futsalPic from '../assets/futsal.png';
 
 
@@ -27,7 +28,7 @@ function Home(){
     
     return (
         <>
-        <Container sx={{marginTop:'6em', position:'relative'}}>
+        <Container sx={{ position:'relative'}}>
             <img src={image} alt="" className='front-image-futsal'/>
             <div className="img-overlay">
                 <div className="img-overlay-content">
@@ -59,6 +60,10 @@ function Home(){
             <div className="top-rated-futsals">
                 <h1 className='top-rated-header'>Top Rated Futsals</h1>
                 {futsals.map(futsal => (
+                <Link to={`/futsals/${futsal.slug}`} style={{
+                    textDecoration:'none',
+                    color:'black'
+                }}>
                 <div className="futsal-card">
                     <img src={futsalPic} alt="fustal-img" className='futsal-image' />
                     <h2>{futsal.name}</h2>
@@ -68,6 +73,7 @@ function Home(){
                        <h5> <strong>Number of Grounds</strong>: {futsal.no_of_grounds} grounds</h5>
                     </div>
                 </div>
+                </Link>
                 ))}
             </div>
         </Container>

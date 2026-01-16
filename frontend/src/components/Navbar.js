@@ -26,7 +26,7 @@ function CustomerStyledButton(props){
 
 function Navbar(){
     return (
-        <AppBar position='fixed' sx={{ boxShadow: 'none' }}>
+        <AppBar sx={{ boxShadow: 'none' }} position='relative'>
             <Toolbar sx={{backgroundColor:'white', justifyContent:'space-around'}}>
                 <Button component={Link} to ='/' disableRipple sx={{":hover":{
                     backgroundColor:'transparent'
@@ -38,6 +38,7 @@ function Navbar(){
                     <CustomerStyledButton text="Futsals" link ="/futsals"/>
                     <CustomerStyledButton text="About" link ="/aboutus"/>
                     <CustomerStyledButton text="Find Player" link ="/findplayer"/>
+                    <CustomerStyledButton text="Player Login" link ="/playerlogin"/>
 
                 </Box>
             </Toolbar>
