@@ -6,6 +6,7 @@ class Futsal(models.Model):
     location = models.CharField(max_length = 100)
     no_of_grounds = models.IntegerField(default=1)
     description = RichTextField()
+    slug = models.SlugField(default='', null= False)
 
 
     def __str__(self):
