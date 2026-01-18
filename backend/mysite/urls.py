@@ -18,11 +18,18 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from futsal.views import FutsalViewSet
+from dj_rest_auth.registration.views import RegisterView
+from dj_rest_auth.views import LoginView, LogoutView, UserDetailsView
 
 router = DefaultRouter()
 router.register(r'futsals',FutsalViewSet )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('login/', LoginView.as_view(), name = 'login'),
+    path('logout/', LogoutView.as_view(), name = 'logout'),
+    path('register/', RegisterView.as_view(), name = 'register'),
+    path('user/', UserDetailsView.as_view(), name = 'user-detail'),
+
 ]
