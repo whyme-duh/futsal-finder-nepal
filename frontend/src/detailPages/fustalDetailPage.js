@@ -67,7 +67,20 @@ function FutsalDetailPage(){
                         />
                 </div>
                 <div className="booking-container">
-                    <h5>Book NOW</h5>
+                    <div className="book-card">
+                        <h1>Book a Court</h1>
+                        <form action="#">
+                            <label htmlFor="date">Date</label>
+                            <input type="date" />
+                            <label htmlFor="time">Time Slot</label>
+                            <select name="time" id="time-slot">
+                                <option value="08:00-09:00">08:00-09:00</option>
+                                <option value="09:00-10:00">09:00-10:00</option>
+                                <option value="10:00-11:00">10:00-11:00</option>
+                            </select>
+                            <button type='submit' className='book-btn'>Book Now</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </Container>
