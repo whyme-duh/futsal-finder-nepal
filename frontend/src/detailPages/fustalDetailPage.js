@@ -18,10 +18,11 @@ function FutsalDetailPage(){
     useEffect(()=>{
         const fetchFutsals = async ()=>{
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/futsals?slug=${slug}/`);
+                const response = await axios.get(`http://127.0.0.1:8000/api/futsals/${slug}/`);
                 const data = await response.data;
                 console.log(data);
                 setFutsal(Array.isArray(data) ? data[0] : data);
+                console.log(futsal);
             } catch (error) {
                 console.log("The error is: ",error);
             }
@@ -39,7 +40,7 @@ function FutsalDetailPage(){
                     </Typography>
                     <div className="location">
                         <LocationOnIcon />
-                        {futsal.location}, Kathmandu
+                        {futsal.location}
                     </div>
                     <div className="facilities-icons">
                         <div className="facility">

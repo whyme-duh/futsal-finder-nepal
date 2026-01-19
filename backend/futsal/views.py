@@ -6,3 +6,4 @@ from rest_framework import viewsets
 class FutsalViewSet(viewsets.ModelViewSet):
     queryset = Futsal.objects.all()
     serializer_class = FutsalModelSerializer
+    lookup_field = 'slug'

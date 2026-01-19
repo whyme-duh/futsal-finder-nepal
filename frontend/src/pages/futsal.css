@@ -4,6 +4,13 @@
     --header-font:"DM Serif Display", serif;
 }
 
+.futsal-list{
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+    flex-wrap: wrap;
+}
 .futsal-img-card{
     width: 90%;
     object-fit: cover;

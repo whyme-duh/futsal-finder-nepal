@@ -47,25 +47,23 @@ function Home(){
         <Container>
             <div className="top-rated-futsals">
                 <h1 className='top-rated-header'>Top Rated Futsals</h1>
-                {futsals.map(futsal => (
-                <Link to={`/futsals/${futsal.slug}`} style={{
-                    textDecoration:'none',
-                    color:'black'
-                }}>
-                <div className="futsal-card" key={futsal.id}>
-                    <img src={futsalPic} alt="fustal-img" className='futsal-image' />
-                    <div className="futsal-info">
-                        <h2>{futsal.name}</h2>
-                        <h5> <LocationOnIcon sx={{color:'green'}}/> {futsal.location}</h5>
-                        <h5> <LocalPhoneOutlinedIcon sx={{color:'green'}}/> 01-4324322</h5>
-                        <h5> <img src={ground} alt="futsal-icon" width={'20px'} /> {futsal.no_of_grounds} grounds</h5>
+                <div className="futsal-list">
+                    {futsals.map(futsal => (
+               
+                    <div className="futsal-card" key={futsal.id}>
+                        <img src={futsalPic} alt="fustal-img" className='futsal-image' />
+                        <div className="futsal-info">
+                            <h2>{futsal.name}</h2>
+                            <h5> <LocationOnIcon sx={{color:'green'}}/> {futsal.location}</h5>
+                            <h5> <LocalPhoneOutlinedIcon sx={{color:'green'}}/> 01-4324322</h5>
+                            <h5> <img src={ground} alt="futsal-icon" width={'20px'} /> {futsal.no_of_grounds} grounds</h5>
+                        </div>
+                        <Link to={`/futsals/${futsal.slug}`} style={{textDecoration:'none', color:'black'}}>
+                        <button className='detail-btn'>View In Detail</button>
+                        </Link>
                     </div>
-                    <Link to={`/futsals/${futsal.slug}`} style={{textDecoration:'none', color:'black'}}>
-                    <button className='detail-btn'>View In Detail</button>
-                    </Link>
+                    ))}
                 </div>
-                </Link>
-                ))}
             </div>
         </Container>
         </>
