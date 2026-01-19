@@ -6,7 +6,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import AboutUs from './pages/aboutus';
 import FutsalDetailPage from './detailPages/fustalDetailPage';
 import FindPlayer from './pages/findplayer';
-import { LoginPage } from './pages/Login';
+import LoginPage from './pages/users/Login';
+import SignUp from './pages/users/Signup';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/findplayer' element={<FindPlayer/>}/>
           <Route path='/futsals/:slug' element={<FutsalDetailPage/>}/>
           <Route path='/playerlogin' element={<LoginPage/>}/>
+          <Route path='/playersignup' element={<SignUp/>}/>
         </Routes>
       </div>
       

@@ -2,7 +2,11 @@ import {useEffect, useState} from 'react';
 import {Container, Card, Button, Typography} from '@mui/material';
 import axios from 'axios';
 import futsalimg from '../assets/futsal.png';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import './futsal.css';
+import ground from '../assets/ground.png';
+
 import { Link } from 'react-router-dom';
 
 function Futsal(){
@@ -27,17 +31,18 @@ function Futsal(){
             <div className="top-rated-futsals">
                 <p>Below are the list of futsals in Kathmandu City</p>
                 {futsals.map(futsal => (
-                <Link to={`/futsals/${futsal.slug}`} style={{textDecoration:'none', color:'black'}}>
                 <div className="futsal-card" key={futsal.id}>
                     <img src={futsalimg} alt="fustal-img" className='futsal-image' />
-                    <h2>{futsal.name}</h2>
                     <div className="futsal-info">
-                        <h5> <strong>Location</strong>: {futsal.location}</h5>
-                        <h5> <strong>Number</strong>: 01-4324322</h5>
-                        <h5> <strong>Number of Grounds</strong>: {futsal.no_of_grounds} grounds</h5>
+                        <h2>{futsal.name}</h2>
+                        <h5> <LocationOnIcon sx={{color:'green'}}/> {futsal.location}</h5>
+                        <h5> <LocalPhoneOutlinedIcon sx={{color:'green'}}/> 01-4324322</h5>
+                        <h5> <img src={ground} alt="futsal-icon" width={'20px'} /> {futsal.no_of_grounds} grounds</h5>
                     </div>
+                    <Link to={`/futsals/${futsal.slug}`} style={{textDecoration:'none', color:'black'}}>
+                    <button className='detail-btn'>View In Detail</button>
+                    </Link>
                 </div>
-                </Link>
                 ))}
             </div>
         </Container>

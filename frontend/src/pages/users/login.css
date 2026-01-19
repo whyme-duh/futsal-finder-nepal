@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+:root{
+    --login-header-font: "Special Gothic Expanded One", sans-serif;
+}
+
 .container{
     width: 100%;
     margin: 0;
@@ -24,25 +30,43 @@
 .login-form{
     width: 50%;
 }
+.login-header{
+    letter-spacing: 4px ;
+    font-family: var(--login-header-font);
+}
 form{
     width: 100%;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
-input[type="text"], input[type="password"]{
+input{
     padding: 1em;
     margin-top: 1em;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+input[type="checkbox"]{
+    margin: 0;
+    
 }
 .login-btn{
     margin-top:1.5em;
     padding: 1em;
     color: white;
     border: none;
+    font-family: var(--login-header-font);
     font-size: 1em;
+    letter-spacing: 2px;
     background-color: rgb(31, 126, 31);
 }
 form small{
     margin-top: 0.5em;
     text-align: right;
+}
+.terms-and-condition{
+    margin-top: 1em;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
 }
