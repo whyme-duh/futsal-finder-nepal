@@ -43,23 +43,7 @@ function Home(){
             </div>
             
         </Container>
-        <Container>
-            <div className="services-provided">
-                <div className = "service">
-                    <MapTwoToneIcon sx={{fontSize:'5em', color:'green'}}/>
-                    <h5>Find Nearby Futsals</h5>
-                </div>  
-                <div className = "service">
-                    <CalendarMonthTwoToneIcon sx={{fontSize:'5em', color:'green'}}/>
-                    <h5>Check Availabilty</h5>
-                </div>  
-                <div className = "service">
-                    <ShieldTwoToneIcon sx={{fontSize:'5em', color:'green'}}/>
-                    <h5>Booking</h5>
-                </div>                
-            
-            </div>
-        </Container>
+        
         <Container>
             <div className="top-rated-futsals">
                 <h1 className='top-rated-header'>Top Rated Futsals</h1>

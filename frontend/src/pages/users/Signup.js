@@ -1,8 +1,13 @@
 import {Link} from 'react-router-dom';
+import React, {useState} from 'react';
 import signinimg from '../../assets/signin.png';
+import axios from 'axios';
 import './login.css';
 
 export default function SignUp(){
+
+    
+
     return (
         <>
         <div className="container">
