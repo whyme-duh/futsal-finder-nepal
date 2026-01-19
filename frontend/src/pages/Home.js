@@ -7,6 +7,10 @@ import axios from 'axios';
 import image from '../assets/images.jpg';
 import { Link } from 'react-router-dom';
 import futsalPic from '../assets/futsal.png';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+import './futsal.css';
+import ground from '../assets/ground.png';
 
 
 function Home(){
@@ -64,14 +68,17 @@ function Home(){
                     textDecoration:'none',
                     color:'black'
                 }}>
-                <div className="futsal-card">
+                <div className="futsal-card" key={futsal.id}>
                     <img src={futsalPic} alt="fustal-img" className='futsal-image' />
-                    <h2>{futsal.name}</h2>
                     <div className="futsal-info">
-                       <h5> <strong>Location</strong>: {futsal.location}</h5>
-                       <h5> <strong>Number</strong>: 01-4324322</h5>
-                       <h5> <strong>Number of Grounds</strong>: {futsal.no_of_grounds} grounds</h5>
+                        <h2>{futsal.name}</h2>
+                        <h5> <LocationOnIcon sx={{color:'green'}}/> {futsal.location}</h5>
+                        <h5> <LocalPhoneOutlinedIcon sx={{color:'green'}}/> 01-4324322</h5>
+                        <h5> <img src={ground} alt="futsal-icon" width={'20px'} /> {futsal.no_of_grounds} grounds</h5>
                     </div>
+                    <Link to={`/futsals/${futsal.slug}`} style={{textDecoration:'none', color:'black'}}>
+                    <button className='detail-btn'>View In Detail</button>
+                    </Link>
                 </div>
                 </Link>
                 ))}
