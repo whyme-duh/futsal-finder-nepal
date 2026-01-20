@@ -2,6 +2,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import React, {useState, useContext} from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import signinimg from '../../assets/signin.png';
+import {toast} from 'react-toastify';
 import './login.css';
 
 export default function LoginPage(){
@@ -15,9 +16,12 @@ export default function LoginPage(){
         e.preventDefault();
         try{
             await login(id, password);
+            toast.success("Logged in succesfully!");
             navigate('/profile');
         }
         catch(error){
+            toast.error("Error occured. Try again later!");
+
             console.log("ERROR OCCURED: ", JSON.stringify(error.response.data));
         }
     }

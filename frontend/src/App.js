@@ -11,6 +11,7 @@ import SignUp from './pages/users/Signup';
 import { Profile } from './pages/users/Profile';
 import {ProtectedRoute, PublicRoute} from './components/AuthGaurds';
 import { AuthProvider } from './context/AuthContext';
+import {ToastContainer} from 'react-toastify';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
             }/>
           </Routes>
         </div>
-        
+        <ToastContainer position='top-right' autoClose={1000}/>
       </BrowserRouter>
     </AuthProvider>
       

@@ -5,11 +5,7 @@ import {useNavigate} from 'react-router-dom';
 export function Profile(){
     const navigate = useNavigate();
     const [profile, setProfile] = useState("");
-    const handleLogout =()=> {
-
-        localStorage.removeItem('access');
-        navigate('/playerlogin');
-    }
+  
 
     useEffect(()=>{
         const fetchProfile = async ()=>{
@@ -33,7 +29,6 @@ export function Profile(){
         <h1>Profile Page</h1>
         {profile.username}
         {profile.email}
-        <button onClick={handleLogout}>Logout</button>
         </>
     )
 }

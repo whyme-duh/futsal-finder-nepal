@@ -63,6 +63,7 @@ function FutsalDetailPage(){
                     </div>
                     <Typography 
                         variant="p" 
+                        textAlign={'justify'}
                         dangerouslySetInnerHTML={{ __html: futsal.description }} 
                         />
                 </div>
