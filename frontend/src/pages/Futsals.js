@@ -19,7 +19,7 @@ function Futsal(){
                 setFutsal(response.data);
 
             }catch(error){
-                console.log("Error" + error);
+                console.log("Error" + JSON.stringify(error.response.data));
             }
         };
         fetchFutsals();

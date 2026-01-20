@@ -1,10 +1,11 @@
 import {Link, useNavigate} from 'react-router-dom';
-import React, {useState} from 'react';
-import axios from 'axios';
+import React, {useState, useContext} from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import signinimg from '../../assets/signin.png';
 import './login.css';
 
 export default function LoginPage(){
+    const {login} = useContext(AuthContext);
 
     const [id, setId] = useState("")
     const [password, setPassword] = useState("")
@@ -13,12 +14,7 @@ export default function LoginPage(){
     const handleLogin = async (e) => {
         e.preventDefault();
         try{
-            const response = await axios.post("http://127.0.0.1:8000/api/token/",{
-                username:id,
-                password: password
-            });
-            localStorage.setItem("access", response.data.access);
-            localStorage.setItem("refresh", response.data.refresh);
+            await login(id, password);
             navigate('/profile');
         }
         catch(error){

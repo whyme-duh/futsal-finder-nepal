@@ -1,31 +1,66 @@
 import {AppBar, Toolbar, Typography, Box, Button} from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {PublicRoute, ProtectedRoute} from './AuthGaurds';
 import logo from '../assets/logo.png';
 import './navbar.css'
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 function CustomerStyledButton(props){
-    return (
-        <Button 
-        disableRipple
-        sx={{
-            fontSize:'1.5em',
-            color:'black',
-            fontFamily:'monospace',
-            paddingInline:'1em',
-            ":hover":{
-                borderBottom:'1px solid black'
-            }
-        }}
-        component={Link}
-        to={props.link}
-        >
-            {props.text}
-        </Button>
-    )
+    if ( props.link == "handleLogout"){
+        return (
+            <Button 
+            disableRipple
+            sx={{
+                fontSize:'1.5em',
+                color:'black',
+                fontFamily:'monospace',
+                paddingInline:'1em',
+                ":hover":{
+                    borderBottom:'1px solid black'
+                }
+            }}
+            onClick={props.function}
+            >
+                {props.text}
+            </Button>
+        )
+    }
+    else{
+        return (
+            <Button 
+            disableRipple
+            sx={{
+                fontSize:'1.5em',
+                color:'black',
+                fontFamily:'monospace',
+                paddingInline:'1em',
+                ":hover":{
+                    borderBottom:'1px solid black'
+                }
+            }}
+            component={Link}
+            to={props.link}
+            >
+                {props.text}
+            </Button>
+        )
+    }
+    
 }
 
 function Navbar(){
+
+    const {user, logout} = useContext(AuthContext);
+    const navigate = useNavigate();
+    console.log(user);
+
+    const handleLogout = () =>{
+        logout();
+        navigate('/playerlogin');
+    };
+
+
     return (
         <AppBar sx={{ boxShadow: 'none' }} position='relative'>
             <Toolbar sx={{backgroundColor:'white', justifyContent:'space-around'}}>
@@ -39,12 +74,17 @@ function Navbar(){
                     <CustomerStyledButton text="Futsals" link ="/futsals"/>
                     <CustomerStyledButton text="About" link ="/aboutus"/>
                     <CustomerStyledButton text="Find Player" link ="/findplayer"/>
-                    <PublicRoute>
-                        <CustomerStyledButton text="Player Login" link ="/playerlogin"/>
-                    </PublicRoute>
-                    <ProtectedRoute>
+                    {user ? (
+                        <>
                         <CustomerStyledButton text="Profile" link ="/profile"/>
-                    </ProtectedRoute>
+                        <CustomerStyledButton text="Logout" link ="handleLogout" function={handleLogout}/>
+                        </>
+                    ) : (
+                        <>
+                        <CustomerStyledButton text="Player Login" link ="/playerlogin"/>
+                        </>
+                        )
+                    }
                 </Box>
             </Toolbar>
 

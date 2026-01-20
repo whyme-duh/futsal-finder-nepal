@@ -10,38 +10,41 @@ import LoginPage from './pages/users/Login';
 import SignUp from './pages/users/Signup';
 import { Profile } from './pages/users/Profile';
 import {ProtectedRoute, PublicRoute} from './components/AuthGaurds';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/futsals' element={<Futsal/>}/>
-          <Route path='/aboutus' element={<AboutUs/>}/>
-          <Route path='/findplayer' element={<FindPlayer/>}/>
-          <Route path='/futsals/:slug' element={<FutsalDetailPage/>}/>
-          <Route path='/playerlogin' element={
-            <PublicRoute>
-              <LoginPage/>
-            </PublicRoute>
-          }/>
-          <Route path='/playersignup' element={
-            <PublicRoute>
-              <SignUp/>
-            </PublicRoute>
-          }/>
-          <Route path='/profile' element={
-            <ProtectedRoute>
-              <Profile/>
-            </ProtectedRoute>
-          }/>
-        </Routes>
-      </div>
-      
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/futsals' element={<Futsal/>}/>
+            <Route path='/aboutus' element={<AboutUs/>}/>
+            <Route path='/findplayer' element={<FindPlayer/>}/>
+            <Route path='/futsals/:slug' element={<FutsalDetailPage/>}/>
+            <Route path='/playerlogin' element={
+              <PublicRoute>
+                <LoginPage/>
+              </PublicRoute>
+            }/>
+            <Route path='/playersignup' element={
+              <PublicRoute>
+                <SignUp/>
+              </PublicRoute>
+            }/>
+            <Route path='/profile' element={
+              <ProtectedRoute>
+                <Profile/>
+              </ProtectedRoute>
+            }/>
+          </Routes>
+        </div>
+        
+      </BrowserRouter>
+    </AuthProvider>
       
   );
 }
