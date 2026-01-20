@@ -13,12 +13,12 @@ export default function LoginPage(){
     const handleLogin = async (e) => {
         e.preventDefault();
         try{
-            const response = await axios.post("http://127.0.0.1:8000/api/login/",{
+            const response = await axios.post("http://127.0.0.1:8000/api/token/",{
                 username:id,
                 password: password
             });
-            localStorage.setItem("acces", response.data.access);
-            alert("Logged In Succesfully!");
+            localStorage.setItem("access", response.data.access);
+            localStorage.setItem("refresh", response.data.refresh);
             navigate('/profile');
         }
         catch(error){

@@ -1,5 +1,6 @@
 import {AppBar, Toolbar, Typography, Box, Button} from '@mui/material';
 import {Link} from 'react-router-dom';
+import {PublicRoute, ProtectedRoute} from './AuthGaurds';
 import logo from '../assets/logo.png';
 import './navbar.css'
 
@@ -38,8 +39,12 @@ function Navbar(){
                     <CustomerStyledButton text="Futsals" link ="/futsals"/>
                     <CustomerStyledButton text="About" link ="/aboutus"/>
                     <CustomerStyledButton text="Find Player" link ="/findplayer"/>
-                    <CustomerStyledButton text="Player Login" link ="/playerlogin"/>
-
+                    <PublicRoute>
+                        <CustomerStyledButton text="Player Login" link ="/playerlogin"/>
+                    </PublicRoute>
+                    <ProtectedRoute>
+                        <CustomerStyledButton text="Profile" link ="/profile"/>
+                    </ProtectedRoute>
                 </Box>
             </Toolbar>
 

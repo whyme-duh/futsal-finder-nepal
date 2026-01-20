@@ -6,7 +6,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: django_backend
+    container_name: futsal_backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./backend:/app
@@ -23,7 +23,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: react_frontend
+    container_name: futsal_frontend
     volumes:
       - ./frontend:/app
       - /app/node_modules

@@ -9,6 +9,7 @@ import FindPlayer from './pages/findplayer';
 import LoginPage from './pages/users/Login';
 import SignUp from './pages/users/Signup';
 import { Profile } from './pages/users/Profile';
+import {ProtectedRoute, PublicRoute} from './components/AuthGaurds';
 
 
 function App() {
@@ -22,9 +23,21 @@ function App() {
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/findplayer' element={<FindPlayer/>}/>
           <Route path='/futsals/:slug' element={<FutsalDetailPage/>}/>
-          <Route path='/playerlogin' element={<LoginPage/>}/>
-          <Route path='/playersignup' element={<SignUp/>}/>
-          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/playerlogin' element={
+            <PublicRoute>
+              <LoginPage/>
+            </PublicRoute>
+          }/>
+          <Route path='/playersignup' element={
+            <PublicRoute>
+              <SignUp/>
+            </PublicRoute>
+          }/>
+          <Route path='/profile' element={
+            <ProtectedRoute>
+              <Profile/>
+            </ProtectedRoute>
+          }/>
         </Routes>
       </div>
       
