@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+:root{
+    --login-header-font: "Special Gothic Expanded One", sans-serif;
+}
+
+.find-futsals-search-fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+}
+.find-futsal-header{
+    font-family: var(--login-header-font);
+    letter-spacing: 3px;
+}
+.find-futsals-options{
+    display: flex;
+    justify-content: space-between;
+}
+.form-field{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

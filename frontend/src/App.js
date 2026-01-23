@@ -12,6 +12,7 @@ import { Profile } from './pages/users/Profile';
 import {ProtectedRoute, PublicRoute} from './components/AuthGaurds';
 import { AuthProvider } from './context/AuthContext';
 import {ToastContainer} from 'react-toastify';
+import { FindFutsal } from './pages/FindFutsal';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/findplayer' element={<FindPlayer/>}/>
             <Route path='/futsals/:slug' element={<FutsalDetailPage/>}/>
+            <Route path='/findfutsal' element={<FindFutsal/>}/>
             <Route path='/playerlogin' element={
               <PublicRoute>
                 <LoginPage/>

@@ -38,7 +38,9 @@ function Home(){
                 <div className="img-overlay-content">
                     <h1 className='image-overlay-header'>Easiest Way to Book Your Game</h1>
                     <h5 className='image-overlay-sub-header'>Find and reseve top futsal courts in your city with a few clicks.</h5>
-                    <a href="#" className='find-futsal-btn'>Find Futsal</a>
+                    <Link to='/findfutsal' className='find-futsal-btn'>
+                    Find Futsal
+                    </Link>
                 </div>
             </div>
             
