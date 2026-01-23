@@ -5,13 +5,14 @@ import './findfutsal.css';
 export function FindFutsal(){
     return (
         <>
-        <Container >
+        <Container sx={{marginTop:'5em'}}>
             <h1 className='find-futsal-header'>Find futsal</h1>
             <div className="find-futsals-search-fields">
                 <TextField sx={{width:'100%',
                     backgroundColor:'white'
                 }} 
                 slotProps={{
+                    
                     input:{
                         startAdornment:<InputAdornment>
                             <IconButton>
@@ -19,13 +20,13 @@ export function FindFutsal(){
                             </IconButton>
                         </InputAdornment>,
                         endAdornment:<InputAdornment>
-                        <IconButton>
-                            <Button >
+                        <IconButton >
+                            <button className='futsal-search-btn'>
                                 Search
-                            </Button>
+                            </button>
                         </IconButton>
                         </InputAdornment>
-                    }
+                    },
                 }}
                 />
                 <div className="find-futsals-options">
@@ -35,15 +36,30 @@ export function FindFutsal(){
                     </div>
                     <div className="form-field">
                         <label htmlFor="time">Time</label>
-                        <input type="time" />
+                        <select name="time" id="time">
+                            <option>07-08</option>
+                            <option>07-08</option>
+                            <option>07-08</option>
+                            <option>07-08</option>
+                        </select>
                     </div>
                     <div className="form-field">
                         <label htmlFor="time">Price Range</label>
-                        <input type="time" />
+                        <select name="time" id="time">
+                            <option>07-08</option>
+                            <option>07-08</option>
+                            <option>07-08</option>
+                            <option>07-08</option>
+                        </select>
                     </div>
                      <div className="form-field">
-                        <label htmlFor="time">Price Range</label>
-                        <input type="time" />
+                        <label htmlFor="time">Turf Style</label>
+                        <select name="time" id="time">
+                            <option>07-08</option>
+                            <option>07-08</option>
+                            <option>07-08</option>
+                            <option>07-08</option>
+                        </select>
                     </div>
                 </div>
             </div>
