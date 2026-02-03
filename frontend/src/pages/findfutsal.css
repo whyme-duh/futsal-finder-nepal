@@ -33,3 +33,8 @@
     padding: 1em;
     height: 100%;
 }
+.recommnded-futsal-header{
+    font-family: var(--login-header-font);
+    text-align: left;
+    margin-top:2em;
+}
