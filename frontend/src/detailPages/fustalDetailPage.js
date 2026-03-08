@@ -45,11 +45,11 @@ function FutsalDetailPage(){
                     <div className="facilities-icons">
                         <div className="facility">
                             <img src={ground} alt="" className='facility-icon-img'/>
-                            <p>5*5 size</p>
+                            <p>{futsal.futsal_side}</p>
                         </div>
                         <div className="facility">
                             <GridOnIcon sx={{fontSize:'40px'}}/>
-                            <p>Artificial Turf</p>
+                            <p>{futsal.turf_type}</p>
                         </div>
                         <div className="facility">
                             <DirectionsCarIcon sx={{fontSize:'40px'}}/>
