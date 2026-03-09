@@ -38,12 +38,22 @@ class Futsal(models.Model):
 
 
 class Booking(models.Model):
+    STATUS = [
+        ("Pending" , "Pending"),
+        ("Cancelled" , "Cancelled"),
+        ("Confirmed" , "Confirmed"),
+    ]
+
     name = models.CharField(max_length = 50, null = True, blank = True)
-    booking_day = models.CharField(null = True, blank = True)
-    booking_slot = models.CharField(null = True, blank = True)
+    booking_date = models.DateField(null = True, blank = True)
+    booking_slot = models.DateTimeField(null = True, blank = True)
+    regular_booking = models.BooleanField(default=False, null = True, blank = True)
+    status = models.TextField(choices=STATUS, default="Pending", null = True, blank = True)
     futsal = models.ForeignKey(Futsal, on_delete=models.PROTECT, related_name='futsal')
     user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='user' )
 
     def __str__(self):
         return f'Nooked by {self.name} at {self.futsal}'
+    
+        
 
